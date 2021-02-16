@@ -1,0 +1,35 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="biblioteca.listado_prestamo_tree">
+      <field name="name">Listado de prestamo</field>
+      <field name="model">biblioteca.prestamo_model</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="biblioteca.listado_prestamo_form">
+      <field name="name">Formulario de prestamo</field>
+      <field name="model">biblioteca.prestamo_model</field>
+      <field name="arch" type="xml">
+        <form string="Nuevo prestamo">
+          <group>
+            <field name="name"/>
+            <field name="cod_socio"/>
+            <field name="cod_libro"/>
+            <field name="cod_bibliotecario"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="biblioteca.action_window_prestamo">
+      <field name="name">Listado de prestamo</field>
+      <field name="res_model">biblioteca.prestamo_model</field>
+      <field name="view_mode">tree,form</field>
+
+    </record>
+  </data>
+</odoo>

@@ -1,0 +1,119 @@
+<odoo>
+  <data>
+    
+    <record model="ir.ui.view" id="biblioteca.listado_libro_tree">
+      <field name="name">Listado de libro</field>
+      <field name="model">biblioteca.libro_model</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="id"/>
+          <field name="foto"/>
+          <field name="fecha"/>
+          <field name="calificacion"/>
+          <field name="isbn"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="biblioteca.listado_libro_form">
+      <field name="name">Formulario de libro</field>
+      <field name="model">biblioteca.libro_model</field>
+      <field name="arch" type="xml">
+        <form string="Nuevo libro">
+          <group>
+            <field name="name"/>
+            <field name="id"/>
+            <field name="foto"/>
+            <field name="fecha"/>
+            <field name="calificacion"/>
+            <field name="isbn"/>
+            <field name="cod_autor"/>
+            <field name="cod_genero"/>
+            <field name="cod_premio"/>
+            <field name="cod_prestamo"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="biblioteca.graph_libro">
+
+      <field name="name">Gráfico de libro</field>
+
+      <field name="model">biblioteca.libro_model</field>
+
+      <field name="arch" type="xml">
+
+        <graph type="pie">
+
+          <field name="name" type="row"/>
+
+          <field name="isbn" />
+
+          <field name="id" type="measure"/>
+
+          <field name="fecha" interval="month"/>
+
+        </graph>
+
+      </field>
+
+    </record>
+
+
+    <record model="ir.ui.view" id="biblioteca.pivot_libro">
+
+      <field name="name">Pivote de libro</field>
+
+      <field name="model">biblioteca.libro_model</field>
+
+      <field name="arch" type="xml">
+
+        <pivot string="Cuadro de libros">
+
+          <field name="name" type="row"/>
+
+          <field name="isbn" />
+
+          <field name="id" />
+
+          <field name="fecha" />
+
+        </pivot>
+
+      </field>
+
+    </record>
+
+    <record model="ir.ui.view" id="biblioteca.calendar_libro">
+
+      <field name="name">Calendario de libro</field>
+
+      <field name="model">biblioteca.libro_model</field>
+
+      <field name="arch" type="xml">
+
+        <calendar date_start="fecha" color="name" event_open_popup="True" mode="month" form_view_id="convalidaciones.conva_model_form" quick_add="False">
+
+          <field name="fecha"/>
+
+          <field name="name"/>
+
+          <field name="id"/>
+
+        </calendar>
+
+      </field>
+
+    </record>
+
+
+    <record model="ir.actions.act_window" id="biblioteca.action_window_libro">
+      <field name="name">Listado de libro</field>
+      <field name="res_model">biblioteca.libro_model</field>
+      <field name="view_mode">tree,form,graph,pivot,calendar</field>
+    </record>
+  </data>
+</odoo>

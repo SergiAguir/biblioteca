@@ -1,0 +1,40 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="biblioteca.listado_socio_tree">
+      <field name="name">Listado de socio</field>
+      <field name="model">biblioteca.socio_model</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="fechaAlta"/>
+          <field name="cod_persona"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="biblioteca.listado_persona_form">
+      <field name="name">Formulario de socio</field>
+      <field name="model">biblioteca.socio_model</field>
+      <field name="arch" type="xml">
+        <form string="Nuevo socio">
+          <group>
+            <field name="name"/>
+            <field name="fechaAlta"/>
+            <field name="cod_persona"/>
+            <field name="cod_prestamo"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="biblioteca.action_window_socio">
+      <field name="name">Listado de socio</field>
+      <field name="res_model">biblioteca.socio_model</field>
+      <field name="view_mode">tree,form</field>
+
+    </record>
+
+
+  </data>
+</odoo>

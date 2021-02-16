@@ -1,0 +1,34 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="biblioteca.listado_genero_tree">
+      <field name="name">Listado de genero</field>
+      <field name="model">biblioteca.genero_model</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="descripcion"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="biblioteca.listado_genero_form">
+      <field name="name">Formulario de genero</field>
+      <field name="model">biblioteca.genero_model</field>
+      <field name="arch" type="xml">
+        <form string="Nuevo genero">
+          <group>
+            <field name="name"/>
+            <field name="descripcion"/>
+            <field name="cod_libro"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="biblioteca.action_window_genero">
+      <field name="name">Listado de genero</field>
+      <field name="res_model">biblioteca.genero_model</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+  </data>
+</odoo>
