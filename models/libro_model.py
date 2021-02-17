@@ -15,7 +15,13 @@ class libro_model(models.Model):
     fecha = fields.Date(string="Fecha", default=lambda self: datetime.today())
     calificacion = fields.Selection(selection=[('1', '1'),('2','2'),('3','3'),('4','4'),('5','5')])
     isbn = fields.Char(string="ISBN", requiered=True,help="Isbn del libro")
+    prestado = fields.Boolean(string="Esta prestado?", default=False)
     cod_autor = fields.Many2one("biblioteca.autor_model")
     cod_genero = fields.Many2one("biblioteca.genero_model")
     cod_premio = fields.One2many("biblioteca.premio_model","cod_libro")
     cod_prestamo = fields.Many2many("biblioteca.prestamo_model")
+
+    def cambiaEstado(self):
+          self.ensure_one()
+          self.prestado = not self.prestado
+          return True
