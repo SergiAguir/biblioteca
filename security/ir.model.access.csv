@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_biblioteca_persona_model,biblioteca.persona_model,model_biblioteca_persona_model,,1,1,1,1
+access_biblioteca_socio_model,biblioteca.socio_model,model_biblioteca_socio_model,,1,1,1,1
+access_biblioteca_bibliotecario_model,biblioteca.bibliotecario_model,model_biblioteca_bibliotecario_model,,1,1,1,1
+access_biblioteca_autor_model,biblioteca.autor_model,model_biblioteca_autor_model,,1,1,1,1
+access_biblioteca_libro_model,biblioteca.libro_model,model_biblioteca_libro_model,,1,1,1,1
+access_biblioteca_genero_model,biblioteca.genero_model,model_biblioteca_genero_model,,1,1,1,1
+access_biblioteca_premio_model,biblioteca.premio_model,model_biblioteca_premio_model,,1,1,1,1
+access_biblioteca_prestamo_model,biblioteca.prestamo_model,model_biblioteca_prestamo_model,,1,1,1,1

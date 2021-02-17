@@ -1,0 +1,145 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="biblioteca.listado_persona_tree">
+      <field name="name">Listado de persona</field>
+      <field name="model">biblioteca.persona_model</field>
+      <field name="arch" type="xml">
+        <tree decoration-danger="edad &lt;= 18">
+          <field name="name"/>
+          <field name="apellidos"/>
+          <field name="dni"/>
+          <field name="telf"/>
+          <field name="email"/>
+          <field name="foto"/>
+          <field name="edad"/>
+          <field name="localidad"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="biblioteca.listado_persona_form">
+      <field name="name">Formulario de persona</field>
+      <field name="model">biblioteca.persona_model</field>
+      <field name="arch" type="xml">
+        <form string="Nueva persona">
+          <sheet>
+            <notebook>
+              <page string="Datos Personales">
+                  <group name="1">
+                    <h2 style="color:#a256a0;">Datos Personales</h2>
+
+                    <field name="foto" widget="image" style="width: 120px; height: 150px;" />
+                    <label for="name" class="oe_edit_only" />
+                    <h1>
+                      <field name="name" />
+                    </h1>
+                    <field name="apellidos" />
+                    <field name="dni"/>
+                    <field name="edad" />
+                  </group>
+                </page>
+
+                <page string="Datos Adicionales">
+                  <group name="2">
+                    <h2 style="color:#a256a0;">Datos Adicionales</h2>
+                    <field name="localidad" />
+                    <field name="telf" />
+                    <field name="email" />
+                  </group>
+                </page>
+
+                <page string="Socio">
+                <group name="3">
+                  <field name="cod_socio" />
+                </group>
+              </page>
+
+              <page string="Bibliotecario">
+                <group name="4">
+                  <field name="cod_bibliotecario" />
+                </group>
+              </page>
+
+              <page string="Autor">
+                <group name="5">
+                  <field name="cod_autor" />
+                </group>
+              </page>
+
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="biblioteca.kanban_persona">
+
+      <field name="name">Listado de persona</field>
+
+      <field name="model">biblioteca.persona_model</field>
+
+      <field name="arch" type="xml">
+
+        <kanban class="o_res_partner_kanban">
+
+          <field name="name" />
+          <field name="apellidos" />
+          <field name="dni" />
+          <field name="telf" />
+          <field name="edad" />
+          <field name="foto" />
+          <field name="localidad" />
+          <field name="email" widget="email" />
+
+          <templates>
+
+            <t t-name="kanban-box">
+
+              <div t-attf-class="oe_kanban_global_click">
+
+                <div class="o_kanban_image">
+
+                  <field name="foto" nolabel="1" widget="image" class="oe_right oe_avatar"/>
+
+                </div>
+
+                <div class="oe_kanban_details">
+
+                  <strong>
+
+                    <field name="name" class="oe_inline"/>
+                    <field name="apellidos" class="oe_inline"/>
+                    <field name="dni" class="oe_inline"/>
+
+                  </strong>
+
+                  <div t-if="record.email.value">
+
+                    <t t-esc="record.email.value"/>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </t>
+
+          </templates>
+
+        </kanban>
+
+      </field>
+
+    </record>
+
+    <record model="ir.actions.act_window" id="biblioteca.action_window_persona">
+      <field name="name">Listado de persona</field>
+      <field name="res_model">biblioteca.persona_model</field>
+      <field name="view_mode">tree,form,kanban</field>
+
+    </record>
+
+  </data>
+</odoo>

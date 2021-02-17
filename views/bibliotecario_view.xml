@@ -1,0 +1,38 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="biblioteca.listado_bibliotecario_tree">
+      <field name="name">Listado de bibliotecario</field>
+      <field name="model">biblioteca.bibliotecario_model</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="fechaAlta"/>
+          <field name="cod_persona"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="biblioteca.listado_bibliotecario_form">
+      <field name="name">Formulario de bibliotecario</field>
+      <field name="model">biblioteca.bibliotecario_model</field>
+      <field name="arch" type="xml">
+        <form string="Nuevo bibliotecario">
+          <group>
+            <field name="name"/>
+            <field name="fechaAlta"/>
+            <field name="cod_persona"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="biblioteca.action_window_bibliotecario">
+      <field name="name">Listado de bibliotecario</field>
+      <field name="res_model">biblioteca.bibliotecario_model</field>
+      <field name="view_mode">tree,form</field>
+
+    </record>
+
+  </data>
+</odoo>
