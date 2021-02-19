@@ -28,7 +28,7 @@ class persona_model(models.Model):
         else:
             try:
                 n=int(self.dni[:-1])
-            except ValueError:
+            except ValidationError:
                 raise ValidationError("Los primeros 8 dígitos deben ser números")
 
             palabra='TRWAGMYFPDXBNJZSQVHLCKE'
