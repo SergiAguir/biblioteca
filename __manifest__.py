@@ -23,6 +23,7 @@
 
     # always loaded
     'data': [
+        'security/biblioteca_security.xml',
         'security/ir.model.access.csv',
         'views/prestamo_view.xml',
         'views/premio_view.xml',
