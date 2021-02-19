@@ -43,6 +43,18 @@
     </record>
 
 
+    <record model="ir.ui.view" id="biblioteca.libro_model_search">
+      <field name="name">Filtros de Libro</field>
+      <field name="model">biblioteca.libro_model</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <filter string="Libros prestados" name="LibrosPrestados" domain="[('prestado','=',True)]"/>
+          <filter string="Libros No prestados" name="LibrosNoPrestados" domain="[('prestado','=',False)]"/>
+        </search>
+      </field>
+    </record>
+
     <record model="ir.ui.view" id="biblioteca.graph_libro">
 
       <field name="name">Gráfico de libro</field>
