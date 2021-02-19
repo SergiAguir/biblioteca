@@ -9,7 +9,7 @@ class libro_model(models.Model):
     _description = 'Modelo de libro'
     _sql_constraints = [("sql_check_name_libro", "UNIQUE(name)","Error en el libro. El libro ya existe!"), ]
 
-    name = fields.Char(string="Nombre",required=True,help="Nombre del libro")
+    name = fields.Char(string="Nombre",required=True,help="Nombre del libro",index=True)
     id = fields.Integer(string="Id",required=True,help="Id del libro")
     foto = fields.Binary()
     fecha = fields.Date(string="Fecha", default=lambda self: datetime.today())

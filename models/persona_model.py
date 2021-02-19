@@ -9,7 +9,7 @@ class persona_model(models.Model):
     _description = 'Modelo de persona'
     _sql_constraints = [("sql_check_dni_persona", "UNIQUE(dni)","Error en la persona. El dni ya existe!"), ]
 
-    name = fields.Char(string="Nombre", required=True,help="Nombre de la persona")
+    name = fields.Char(string="Nombre", required=True,help="Nombre de la persona",index=True)
     apellidos = fields.Char(string="Apellidos", required=True, help="Apellidos de la persona")
     dni = fields.Char(string="DNI", required=True, help="DNI de la persona")
     telf = fields.Integer(string="Telefono", size=9,required=True,help="Telefono de la persona")
