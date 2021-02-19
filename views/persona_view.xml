@@ -10,8 +10,8 @@
           <field name="apellidos"/>
           <field name="dni"/>
           <field name="telf"/>
-          <field name="email"/>
-          <field name="foto"/>
+          <field name="email" widget="email"/>
+          <field name="foto" />
           <field name="edad"/>
           <field name="localidad"/>
         </tree>
@@ -45,7 +45,7 @@
                     <h2 style="color:#a256a0;">Datos Adicionales</h2>
                     <field name="localidad" />
                     <field name="telf" />
-                    <field name="email" />
+                    <field name="email" widget="email"/>
                   </group>
                 </page>
 

@@ -7,7 +7,7 @@ from odoo.exceptions import ValidationError
 class persona_model(models.Model):
     _name = 'biblioteca.persona_model'
     _description = 'Modelo de persona'
-    _sql_constraints = [("sql_check_dni_persona", "UNIQUE(name)","Error en la persona. El dni ya existe!"), ]
+    _sql_constraints = [("sql_check_dni_persona", "UNIQUE(dni)","Error en la persona. El dni ya existe!"), ]
 
     name = fields.Char(string="Nombre", required=True,help="Nombre de la persona")
     apellidos = fields.Char(string="Apellidos", required=True, help="Apellidos de la persona")
@@ -21,18 +21,28 @@ class persona_model(models.Model):
     cod_bibliotecario = fields.Many2one("biblioteca.bibliotecario_model")
     cod_autor = fields.Many2one("biblioteca.autor_model")
 
+    
+    def check_DNI(self, dni):
+        if len(self.dni)!=9:
+            raise ValidationError("El DNI debe tener 9 caracteres")
+        else:
+            try:
+                n=int(self.dni[:-1])
+            except ValueError:
+                raise ValidationError("Los primeros 8 dígitos deben ser números")
 
-    def check_DNI(self, ndni):
-        tabla = "TRWAGMYFPDXBNJZSQVHLCKE"
-        dig_ext = "XYZ"
-        reemp_dig_ext = {'X': '0', 'Y': '1', 'Z': '2'}
-        numeros = "1234567890"
-        dni = ndni.upper()
-        if len(dni) == 9:
-            dig_control = dni[8]
-            dni = dni[:8]
-            if dni[0] in dig_ext:
-                dni = dni.replace(dni[0], reemp_dig_ext[dni[0]])
-            return len(dni) == len([n for n in dni if n in numeros]) \
-                and tabla[int(dni) % 23] == dig_control
-        return False
+            palabra='TRWAGMYFPDXBNJZSQVHLCKE'
+
+            if self.dni[-1].upper() == palabra[n%23]:
+                return True
+            else:
+                
+                raise ValidationError("La letra no coincide con el DNI")
+
+    @api.constrains("email")
+    def _comprobarEmail(self):
+        if len(self.email)>5:
+            if "@" not in self.email:
+                raise ValidationError("El email tiene que contener una @")
+        else:
+            raise ValidationError("El email tiene que tener mas de 5 caracteres")

@@ -1,15 +1,21 @@
 <odoo>
   <data>
     <menuitem name="Biblioteca" id="biblioteca.menu_root"/>
+
     <menuitem name="Acciones Personas" id="biblioteca.menu_acciones_persona" parent="biblioteca.menu_root"/>
+
     <menuitem name="Persona" id="biblioteca.menu_persona" parent="biblioteca.menu_acciones_persona" action="biblioteca.action_window_persona"/>
     <menuitem name="Socio" id="biblioteca.menu_socio" parent="biblioteca.menu_acciones_persona" action="biblioteca.action_window_socio"/>
     <menuitem name="Bibliotecario" id="biblioteca.menu_bibliotecario" parent="biblioteca.menu_acciones_persona" action="biblioteca.action_window_bibliotecario"/>
     <menuitem name="Autor" id="biblioteca.menu_autor" parent="biblioteca.menu_acciones_persona" action="biblioteca.action_window_autor"/>
+
     <menuitem name="Acciones Libros" id="biblioteca.menu_acciones_libros" parent="biblioteca.menu_root"/>
+
     <menuitem name="Libro" id="biblioteca.menu_libro" parent="biblioteca.menu_acciones_libros" action="biblioteca.action_window_libro"/>
     <menuitem name="Genero" id="biblioteca.menu_genero" parent="biblioteca.menu_acciones_libros" action="biblioteca.action_window_genero"/>
+
     <menuitem name="Premio" id="biblioteca.menu_premio" parent="biblioteca.menu_root" action="biblioteca.action_window_premio"/>
+    
     <menuitem name="Prestamo" id="biblioteca.menu_prestamo" parent="biblioteca.menu_root" action="biblioteca.action_window_prestamo"/>
   </data>
 </odoo>
