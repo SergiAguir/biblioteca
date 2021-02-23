@@ -23,6 +23,7 @@
             <field name="fechaAlta"/>
             <field name="cod_persona"/>
             <field name="cod_prestamo"/>
+            <field name="cod_factura"/>
           </group>
         </form>
       </field>

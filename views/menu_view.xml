@@ -17,6 +17,12 @@
     <menuitem name="Premio" id="biblioteca.menu_premio" parent="biblioteca.menu_root" action="biblioteca.action_window_premio"/>
     
     <menuitem name="Prestamo" id="biblioteca.menu_prestamo" parent="biblioteca.menu_root" action="biblioteca.action_window_prestamo"/>
+
+    <menuitem name="Acciones Facturas" id="biblioteca.menu_acciones_facturas" parent="biblioteca.menu_root"/>
+
+    <menuitem name="Factura" id="biblioteca.menu_factura" parent="biblioteca.menu_acciones_facturas" action="biblioteca.action_window_factura"/>
+    <menuitem name="Detalle Factura" id="biblioteca.menu_dfacturas" parent="biblioteca.menu_acciones_facturas" action="biblioteca.action_window_dfacturas"/>
+
   </data>
 </odoo>
 

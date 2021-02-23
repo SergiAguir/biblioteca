@@ -13,6 +13,7 @@
           <field name="calificacion"/>
           <field name="isbn"/>
           <field name="prestado"/>
+          <field name="precio"/>
         </tree>
       </field>
     </record>
@@ -33,10 +34,12 @@
             <field name="calificacion"/>
             <field name="isbn"/>
             <field name="prestado"/>
+            <field name="precio"/>
             <field name="cod_autor"/>
             <field name="cod_genero"/>
             <field name="cod_premio"/>
             <field name="cod_prestamo"/>
+            <field name="cod_dfacturas"/>
           </group>
         </form>
       </field>

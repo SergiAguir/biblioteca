@@ -25,6 +25,8 @@
     'data': [
         'security/biblioteca_security.xml',
         'security/ir.model.access.csv',
+        'views/dfacturas_view.xml',
+        'views/factura_view.xml',
         'views/prestamo_view.xml',
         'views/premio_view.xml',
         'views/genero_view.xml',

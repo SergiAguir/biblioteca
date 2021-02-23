@@ -1,0 +1,53 @@
+<odoo>
+  <data>
+    
+    <record model="ir.ui.view" id="biblioteca.listado_factura_tree">
+      <field name="name">Listado de facturas</field>
+      <field name="model">biblioteca.factura_model</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="fecha"/>
+          <field name="cod_socio"/>
+          <field name="cod_dfacturas"/>
+          <field name="base"/>
+          <field name="iva"/>
+          <field name="total"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="biblioteca.listado_factura_form">
+      <field name="name">Listado de facturas</field>
+      <field name="model">biblioteca.factura_model</field>
+      <field name="arch" type="xml">
+        <form string="Nueva factura">
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="fecha"/>
+              <field name="cod_socio"/>
+              <field name="base"/>
+              <field name="iva"/>
+              <field name="total"/>
+              <field name="cod_dfacturas">
+                <tree>
+                  <field name="cod_libro"/>
+                  <field name="cantidad"/>
+                </tree>
+              </field>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="biblioteca.action_window_factura">
+      <field name="name">Listado de facturas</field>
+      <field name="res_model">biblioteca.factura_model</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+  </data>
+</odoo>

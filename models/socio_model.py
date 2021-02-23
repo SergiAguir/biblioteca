@@ -13,3 +13,4 @@ class socio_model(models.Model):
     fechaAlta = fields.Date(string="Fecha", default=lambda self: datetime.today())
     cod_persona = fields.One2many("biblioteca.persona_model","cod_socio")
     cod_prestamo = fields.One2many("biblioteca.prestamo_model","cod_socio")
+    cod_factura = fields.One2many("biblioteca.factura_model","cod_socio")
