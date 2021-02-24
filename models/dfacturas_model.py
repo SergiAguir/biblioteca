@@ -13,5 +13,6 @@ class dfacturas_model(models.Model):
 
     @api.constrains('cantidad')
     def _comprobarCant(self):
-        if self.cantidad < 0:
-            raise ValidationError("La minima catidad de un producto tiene que ser 1")
+        for i in self:
+            if i.cantidad < 0:
+                   raise ValidationError("La minima catidad de un producto tiene que ser 1")
